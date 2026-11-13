@@ -1,1 +1,822 @@
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211716">
+
+  <title>ASSYAR | Official Artist</title>
+  <meta name="description" content="ASSYAR — Artista cabo-verdiana de Pop e R&B. Música, biografia, lançamentos e contactos oficiais.">
+
+  <meta property="og:title" content="ASSYAR | Official Artist">
+  <meta property="og:description" content="Discover the world of ASSYAR. Pop, R&B and music.">
+  <meta property="og:image" content="Screenshot_20261113_163827_Instagram.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --coral: #F06B55;
+      --orange: #FF9A62;
+      --red: #C93632;
+      --dark: #211716;
+      --cream: #FFF2EA;
+      --white: #FFFFFF;
+      --muted: #BCA9A2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 25px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #fff;
+      opacity: .85;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    .language {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 30px;
+      color: white;
+      padding: 8px 13px;
+      font-size: 11px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(201,54,50,.35), transparent 40%),
+        linear-gradient(110deg, #211716 0%, #321B19 55%, #8D3028 100%);
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 58%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      opacity: .85;
+      mask-image: linear-gradient(to right, transparent 0%, black 35%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(33,23,22,.98) 0%, rgba(33,23,22,.72) 42%, rgba(33,23,22,.05) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 130px 7% 90px;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(75px, 13vw, 155px);
+      font-weight: 600;
+      line-height: .9;
+      letter-spacing: -5px;
+    }
+
+    .hero h1 span {
+      color: var(--coral);
+    }
+
+    .hero-description {
+      margin-top: 28px;
+      color: #E6D5CE;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 25px;
+      border-radius: 40px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.65);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    .scroll-label {
+      position: absolute;
+      bottom: 35px;
+      left: 7%;
+      color: #D0BDB5;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 110px 8%;
+    }
+
+    .section-label {
+      color: var(--coral);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 65px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    /* BIOGRAPHY */
+
+    .about {
+      background: var(--cream);
+      color: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-image {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
+    }
+
+    .about-text p {
+      color: #695751;
+      line-height: 1.9;
+      font-size: 15px;
+      margin-top: 25px;
+    }
+
+    .about-details {
+      display: flex;
+      gap: 35px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 21px;
+      color: var(--red);
+      margin-bottom: 5px;
+    }
+
+    .detail span {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #806B63;
+    }
+
+    /* MUSIC */
+
+    .music {
+      background: linear-gradient(135deg, #2C1917, #49201D);
+      text-align: center;
+    }
+
+    .music .section-title {
+      color: white;
+    }
+
+    .music-intro {
+      color: #D0BDB5;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .release-card {
+      max-width: 760px;
+      margin: 55px auto 0;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      text-align: left;
+    }
+
+    .release-cover {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .release-info {
+      flex: 1;
+    }
+
+    .release-info small {
+      color: var(--orange);
+      letter-spacing: 2px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .release-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin: 10px 0;
+    }
+
+    .release-info p {
+      color: #D0BDB5;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    /* BOOKING */
+
+    .booking {
+      background: linear-gradient(120deg, #F06B55, #C93632);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking .section-label {
+      color: #FFE2D5;
+    }
+
+    .booking .section-title {
+      font-size: clamp(42px, 7vw, 75px);
+    }
+
+    .booking p {
+      margin: 20px auto 30px;
+      max-width: 550px;
+      color: #FFE8DF;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .booking .btn {
+      background: var(--dark);
+      color: white;
+    }
+
+    .booking .btn:hover {
+      background: white;
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .agent {
+      margin-top: 30px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #FFE8DF;
+      line-height: 2;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 40px 7%;
+      background: #17100F;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .logo {
+      font-size: 19px;
+    }
+
+    footer p {
+      color: #9D8B85;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: var(--orange);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 850px) {
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image {
+        max-height: 500px;
+      }
+
+      .hero-image {
+        width: 100%;
+        opacity: .55;
+        mask-image: linear-gradient(to top, black, transparent 110%);
+        -webkit-mask-image: linear-gradient(to top, black, transparent 110%);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(90deg, rgba(33,23,22,.78), rgba(33,23,22,.35));
+      }
+    }
+
+    @media(max-width: 600px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .logo {
+        font-size: 19px;
+        letter-spacing: 3px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero-content {
+        padding: 120px 7% 90px;
+      }
+
+      .hero h1 {
+        font-size: clamp(65px, 17vw, 100px);
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+      }
+
+      section {
+        padding: 80px 7%;
+      }
+
+      .release-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .release-cover {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+      }
+
+      .release-info h3 {
+        font-size: 30px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <a href="#" class="logo">ASSYAR<span>.</span></a>
+
+    <nav>
+      <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="#music" data-pt="Música" data-en="Music">Música</a>
+      <a href="#booking" data-pt="Booking" data-en="Booking">Booking</a>
+
+      <button class="language" id="languageButton" onclick="toggleLanguage()">
+        EN
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <main>
+    <section class="hero">
+
+      <img
+        class="hero-image"
+        src="Screenshot_20261113_163827_Instagram.jpg"
+        alt="ASSYAR"
+      >
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <div class="eyebrow"
+          data-pt="Artista cabo-verdiana · Pop & R&B"
+          data-en="Cape Verdean Artist · Pop & R&B">
+          Artista cabo-verdiana · Pop & R&B
+        </div>
+
+        <h1>ASSY<span>AR</span></h1>
+
+        <p class="hero-description"
+          data-pt="Uma nova energia. Uma nova voz. Uma nova história."
+          data-en="A new energy. A new voice. A new story.">
+          Uma nova energia. Uma nova voz. Uma nova história.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="https://distrokid.com/hyperfollow/assyar/ave-baby"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-primary"
+             data-pt="OUVIR MÚSICA"
+             data-en="LISTEN NOW">
+            OUVIR MÚSICA
+          </a>
+
+          <a href="#about" class="btn btn-outline"
+             data-pt="DESCOBRIR"
+             data-en="DISCOVER">
+            DESCOBRIR
+          </a>
+
+        </div>
+      </div>
+
+      <div class="scroll-label">SCROLL TO DISCOVER ↓</div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+      <div>
+        <img
+          class="about-image"
+          src="Screenshot_20261113_163827_Instagram.jpg"
+          alt="Retrato oficial da ASSYAR"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="about-text">
+
+        <div class="section-label"
+          data-pt="Conhece a artista"
+          data-en="Meet the artist">
+          Conhece a artista
+        </div>
+
+        <h2 class="section-title"
+          data-pt="A sua história. A sua voz."
+          data-en="Her story. Her voice.">
+          A sua história.<br>A sua voz.
+        </h2>
+
+        <p data-pt="ASSYAR é uma artista cabo-verdiana, natural da cidade da Praia, atualmente residente em Portugal. Com uma identidade musical assente nos géneros Pop e R&B, iniciou o seu percurso artístico em 2026, apresentando o seu primeiro lançamento, AVE BABY. A sua música representa o início de uma jornada marcada pela expressão, personalidade e paixão pela música."
+           data-en="ASSYAR is a Cape Verdean artist from the city of Praia, currently based in Portugal. With a musical identity rooted in Pop and R&B, she began her artistic journey in 2026 with her debut release, AVE BABY. Her music marks the beginning of a journey shaped by expression, personality and a passion for music.">
+          ASSYAR é uma artista cabo-verdiana, natural da cidade da Praia, atualmente residente em Portugal. Com uma identidade musical assente nos géneros Pop e R&B, iniciou o seu percurso artístico em 2026, apresentando o seu primeiro lançamento, AVE BABY. A sua música representa o início de uma jornada marcada pela expressão, personalidade e paixão pela música.
+        </p>
+
+        <div class="about-details">
+
+          <div class="detail">
+            <strong>2026</strong>
+            <span data-pt="Início da carreira"
+                  data-en="Career debut">
+              Início da carreira
+            </span>
+          </div>
+
+          <div class="detail">
+            <strong>POP / R&B</strong>
+            <span data-pt="Estilo musical"
+                  data-en="Music genre">
+              Estilo musical
+            </span>
+          </div>
+
+          <div class="detail">
+            <strong>CV 🇨🇻</strong>
+            <span data-pt="Origem"
+                  data-en="Origin">
+              Origem
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+
+    <section class="music" id="music">
+
+      <div class="section-label"
+        data-pt="A sua música"
+        data-en="Her music">
+        A sua música
+      </div>
+
+      <h2 class="section-title"
+        data-pt="Ouça. Sinta. Descubra."
+        data-en="Listen. Feel. Discover.">
+        Ouça. Sinta. Descubra.
+      </h2>
+
+      <p class="music-intro"
+        data-pt="Descobre o universo musical da ASSYAR."
+        data-en="Discover the musical world of ASSYAR.">
+        Descobre o universo musical da ASSYAR.
+      </p>
+
+      <div class="release-card">
+
+        <img
+          class="release-cover"
+          src="Screenshot_20261113_163827_Instagram.jpg"
+          alt="ASSYAR"
+          loading="lazy"
+        >
+
+        <div class="release-info">
+
+          <small
+            data-pt="Primeiro lançamento · 2026"
+            data-en="Debut release · 2026">
+            Primeiro lançamento · 2026
+          </small>
+
+          <h3>AVE BABY</h3>
+
+          <p>ASSYAR</p>
+
+          <a
+            href="https://distrokid.com/hyperfollow/assyar/ave-baby"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            data-pt="OUVIR EM TODAS AS PLATAFORMAS"
+            data-en="LISTEN ON ALL PLATFORMS">
+            OUVIR EM TODAS AS PLATAFORMAS
+          </a>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOOKING -->
+
+    <section class="booking" id="booking">
+
+      <div class="section-label"
+        data-pt="Eventos · Concertos · Parcerias"
+        data-en="Events · Concerts · Partnerships">
+        Eventos · Concertos · Parcerias
+      </div>
+
+      <h2 class="section-title"
+        data-pt="Vamos trabalhar juntos?"
+        data-en="Let's work together?">
+        Vamos trabalhar juntos?
+      </h2>
+
+      <p data-pt="Para atuações, eventos, concertos, parcerias e propostas comerciais, entra em contacto com a equipa oficial da ASSYAR."
+         data-en="For performances, events, concerts, partnerships and business enquiries, get in touch with ASSYAR's official management team.">
+        Para atuações, eventos, concertos, parcerias e propostas comerciais, entra em contacto com a equipa oficial da ASSYAR.
+      </p>
+
+      <a
+        href="https://wa.me/351929347034?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20marca%C3%A7%C3%A3o%20para%20a%20artista%20ASSYAR."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+        data-pt="BOOK ASSYAR"
+        data-en="BOOK ASSYAR">
+        BOOK ASSYAR
+      </a>
+
+      <div class="agent">
+        <strong>PSP ENTERTAINMENT</strong><br>
+        <span data-pt="Agenciamento & Management"
+              data-en="Booking & Artist Management">
+          Agenciamento & Management
+        </span>
+        <br>
+        <span>Agent: Paulo Ricardo</span>
+        <br>
+        <span>WhatsApp: +351 929 347 034</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <a href="#" class="logo">ASSYAR<span>.</span></a>
+
+    <p>
+      © <span id="year"></span> ASSYAR.
+      <span data-pt="Todos os direitos reservados."
+            data-en="All rights reserved.">
+        Todos os direitos reservados.
+      </span>
+    </p>
+
+    <p>
+      <span data-pt="Uma artista representada por"
+            data-en="An artist represented by">
+        Uma artista representada por
+      </span>
+      <a href="https://pspentertainment.online"
+         target="_blank"
+         rel="noopener noreferrer">
+        PSP Entertainment
+      </a>
+    </p>
+
+  </footer>
+
+  <!-- LANGUAGE SYSTEM -->
+
+  <script>
+    let currentLanguage = "pt";
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === "pt" ? "en" : "pt";
+
+      document.documentElement.lang = currentLanguage;
+
+      document.querySelectorAll("[data-pt]").forEach(element => {
+        element.textContent =
+          element.getAttribute("data-" + currentLanguage);
+      });
+
+      document.getElementById("languageButton").textContent =
+        currentLanguage === "pt" ? "EN" : "PT";
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
